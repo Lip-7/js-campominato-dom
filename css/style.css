@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --red: #FF9C80;
+    --dark-red: #B35136;
+    --primary-color: #80FFDB;
+    --success: #47B394;
+    --orange: #FFBE73;
+    --violet: #6D68E8;
+}
+.wrapper{
+    background-color: #7fffda;
+    height: 100vh;
+    width: 100%;
+}
+header,footer{
+    background-color: white;
+    height: 80px;
+    color: var(--success);
+}
+main{
+    height: calc(100% - 160px);
+    overflow-y: auto;
+}
+#playground{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.square{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: transparent;
+}
+.square.safe{
+    background-color: var(--success);
+}
+.square.bomb{
+    background-color: var(--red);
+    animation: blink 3s linear;
+}
+@keyframes blink {
+    0% {background-color: var(--red);}
+    15% {background-color: var(--dark-red);}
+    30% {background-color: var(--red);}
+    45% {background-color: var(--dark-red);}
+    60% {background-color: var(--red);}
+    75% {background-color: var(--dark-red);}
+    100% {background-color: var(--red);}
+  }
+@keyframes boing {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+  }
